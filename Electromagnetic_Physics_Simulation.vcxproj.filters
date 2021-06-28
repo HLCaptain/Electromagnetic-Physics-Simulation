@@ -15,30 +15,35 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\SimDraw.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\Simulation.cpp">
+    <ClCompile Include="src\SimDraw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\WindowSDL.cpp">
+    <ClCompile Include="src\Simulation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\main.cpp">
+    <ClCompile Include="src\WindowSDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\SimDraw.h">
+    <None Include="SDL2.dll" />
+    <None Include=".gitignore" />
+    <None Include=".gitattributes" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SimDraw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\Simulation.h">
+    <ClInclude Include="src\Simulation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\Vector2D.h">
+    <ClInclude Include="src\Vector2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\..\OneDrive VAQR_8066\OneDrive - Kormányzati Informatikai Fejlesztési Ügynökség\Iskola\S2\Fizika 2\fizika_imsc_P11\WindowSDL.h">
+    <ClInclude Include="src\WindowSDL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
