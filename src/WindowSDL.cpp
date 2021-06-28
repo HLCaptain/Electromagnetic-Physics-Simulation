@@ -73,5 +73,5 @@ void Window::clear() const {
  * @brief Closes the window (calls the destructor).
  */
 void Window::close() {
-	this->~Window();
+	closed = true;
 }
