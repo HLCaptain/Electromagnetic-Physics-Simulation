@@ -1,5 +1,11 @@
 #include "SimDraw.h"
-
+/**
+ * drawPoint
+ * @brief Draws out one point on the window.
+ * @param P point in the modeling world to draw out perspectively.
+ * @param window used window to draw on.
+ * @param Offset offset to draw out.
+ */
 void drawPoint(Vector2D P, Window& window, Vector2D Offset) {
 	SDL_Rect pixel;
 	pixel.x = P.GetX() - Offset.GetX();
@@ -11,7 +17,16 @@ void drawPoint(Vector2D P, Window& window, Vector2D Offset) {
 	//SDL_RenderPresent(window.getRenderer());
 }
 
+/**
+ * drawGraphLines
+ * @brief Draws out the lines in the background like according to the coordinate system.
+ * @param pos position of the camera.
+ * @param scale scale of the camera.
+ * @param window window to draw on.
+ * @param Offset offset of the camera.
+ */
 void drawGraphLines(Vector2D pos, Vector2D scale, Window& window, Vector2D Offset) {
+	// todo: find out what pos and offset is doing here. Why not use just only one?
 	SDL_SetRenderDrawColor(window.getRenderer(), 180, 180, 180, SDL_ALPHA_OPAQUE);
 
 	scale.SetX(scale.GetX() * scale.GetX());

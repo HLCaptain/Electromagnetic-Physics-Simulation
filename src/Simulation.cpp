@@ -1,6 +1,11 @@
 #include "Simulation.h"
 
-
+/**
+ * functionDraw
+ * @brief Draws out the points onto the window.
+ * @param Pos points to draw out.
+ * @param WindowTitle the title of the window.
+ */
 void functionDraw(std::vector<Vector2D>& Pos, std::string WindowTitle) {
 	Window window(WindowTitle);
 
@@ -73,6 +78,15 @@ void functionDraw(std::vector<Vector2D>& Pos, std::string WindowTitle) {
 	window.clear();
 }
 
+/**
+ * runSim
+ * @brief With given attributes, computes the points of projection of the body. Also draws it onto a window and saves it onto a .dat file.
+ * @param b B is the magnetic field in Tesla.
+ * @param q is the electric charge of the body (particle) in Coulomb.
+ * @param m is the mass of the body.
+ * @param time duration of the simulation in seconds.
+ * @param frequency how many times in a second should the simulation tick.
+ */
 void runSim(double b, double q, double m, double time, double frequency) {
 	Vector2D MagneticField(b, 0); /// Magnetic Field's Vector in Tesla
 	Vector2D Lorentz(0, 0); /// Lorentz Force in Newton
@@ -108,12 +122,27 @@ void runSim(double b, double q, double m, double time, double frequency) {
 	functionDraw(Pos, CreateFileName("Fizika_P11_Sim ")); /// Draws the Simulation to a Window
 }
 
+/**
+ * TransformVector
+ * @brief Transforms a vector with (scale, position offset) while it also can be offseted afterwards the transform.
+ * @param pos original position of the point.
+ * @param scale scale.
+ * @param vec vector to do the position offset with.
+ * @param Offset offset afterwards the transition.
+ * @return transitioned and offseted point.
+ */
 Vector2D TransformVector(Vector2D pos, Vector2D scale, Vector2D vec, Vector2D Offset) {
 	scale.SetX(scale.GetX() * scale.GetX());
 	scale.SetY(scale.GetY() * scale.GetY() * (-1));
 	return Vector2D(vec.GetX() * scale.GetX() - Offset.GetX() + pos.GetX(), vec.GetY() * scale.GetY() + Offset.GetY() + pos.GetY());
 }
 
+/**
+ * CreateFileName
+ * @brief Creates a file's name with the date and time in it to make it unique.
+ * @param Title first name of the file.
+ * @return final (probably unique) file name.
+ */
 std::string CreateFileName(std::string Title) {
 	time_t now = time(0);
 	tm TimeNow;
@@ -132,10 +161,14 @@ std::string CreateFileName(std::string Title) {
 	FileNameStream << "_";
 	FileNameStream << TimeNow.tm_sec;
 	std::string FileNameString = FileNameStream.str();
-	//std::cout << FileNameStream << std::endl;
 	return FileNameString;
 }
 
+/**
+ * SaveSim
+ * @brief Saves the simulation onto a .dat file with a unique name.
+ * @param Pos data of the simulated points.
+ */
 void SaveSim(std::vector<Vector2D> Pos) {
 	std::string FileName(CreateFileName("Fizika_P11_Sim "));
 	std::ofstream f;
